@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    overflow: hidden;
+    background: linear-gradient(180deg,#1E2530, #000000);
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    position: relative;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#clock {
+    z-index: 999;
+    pointer-events: none;
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(-75deg,#F84958, #9A3946);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size: 18vw;
+    letter-spacing: 20px;
+    transition: font-size  0.6s ease;        
+}
+
+#clock1 {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    filter: blur(70px);
+    font-family: 'Chakra Petch', sans-serif;
+    color: #F84958;
+    font-size: 18vw;
+    letter-spacing: 20px;
+    transition: font-size  0.6s ease;        
+}
+
+
+
+.elem1{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+
+.elem2{
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+
+.name{
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 50vw;
+    letter-spacing:-2px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #F84958;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    opacity: .5;
+    animation: drift 40s infinite; /* Set the animation duration and repeat */
+
+}
+
+.blur{
+    position: absolute;
+    backdrop-filter: blur(5px);
+    width: 100vw; 
+    height: 35%;
+    color: white;
+    background-color: #f849580e;
+  }
+
+
+
+@keyframes drift {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(800px); /* Adjust the distance as needed */
+    }
+  }
+
+
+.noise{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    mix-blend-mode: overlay;
+}
+
+  
